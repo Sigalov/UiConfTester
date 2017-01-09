@@ -1,0 +1,40 @@
+<script src="http://cdnapi.kaltura.com/p/$partnerId$/sp/$partnerId$00/embedIframeJs/uiconf_id/$uiConfId$/partner_id/$partnerId$"></script>
+<div id="kaltura_player_$uiConfId$" style="width: 400px; height: 333px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+<span itemprop="name" content="daf"></span>
+<span itemprop="description" content=""></span>
+<span itemprop="duration" content="126"></span>
+<span itemprop="thumbnail" content="http://cdnsecakmi.kaltura.com/p/$partnerId$/sp/$partnerId$00/thumbnail/entry_id/1_3u4nvppb/version/100000/acv/171"></span>
+<span itemprop="width" content="400"></span>
+<span itemprop="height" content="333"></span>
+</div>
+<script>
+kWidget.embed({
+"targetId": "kaltura_player_$uiConfId$",
+"wid": "_$partnerId$",
+"uiconf_id": $uiConfId$,
+"flashvars": {
+"streamerType": "auto",
+"externalInterfaceDisabled": "false",
+	'autoPlay': true,
+	'autoMute': true
+},
+"cache_st": 1404218170,
+"entry_id": "1_3u4nvppb"
+});
+</script>
+<p id="kaltura_player_$uiConfId$_status">Waiting for player</p>
+
+<script>
+function jsCallbackReady(objectId) {
+	var kdp = document.getElementById(objectId);
+	document.getElementById(objectId+'_status').innerHTML = 'Player ready';
+	kdp.addJsListener("playerUpdatePlayhead", "playerUpdatePlayhead");
+}
+
+function playerUpdatePlayhead(position, objectId) {
+	document.getElementById(objectId+'_status').innerHTML = 'Playing';
+	if (position > 2) { 
+		document.getElementById(objectId+'_status').innerHTML = 'Played for 2 seconds';
+	}
+}
+</script>
